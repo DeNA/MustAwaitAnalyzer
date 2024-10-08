@@ -1,0 +1,32 @@
+coverage:
+  if: true
+  paths:
+    - output.cobertura.xml
+
+codeToTestRatio:
+  code:
+    - 'DenaUnityAnalyzers.NETProject/BanNonGenericCollectionsAnalyzer/*.cs'
+    - 'DenaUnityAnalyzers.NETProject/MissingSealedAnalyzer/*.cs'
+    - 'DenaUnityAnalyzers.NETProject/SharinDIAnalyzer/*.cs'
+  test:
+    - 'DenaUnityAnalyzers.NETProject/BanNonGenericCollectionsAnalyzer.Test/*.cs'
+    - 'DenaUnityAnalyzers.NETProject/MissingSealedAnalyzer.Test/*.cs'
+    - 'DenaUnityAnalyzers.NETProject/SharinDIAnalyzer.Test/*.cs'
+
+testExecutionTime:
+  if: true
+
+diff:
+  datastores:
+    - bq://dena-internal-swet-gcp/octocov/gtr
+
+comment:
+  if: is_pull_request
+
+summary:
+  if: true
+
+report:
+  if: is_default_branch
+  datastores:
+    - bq://dena-internal-swet-gcp/octocov/gtr

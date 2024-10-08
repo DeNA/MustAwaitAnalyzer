@@ -1,0 +1,19 @@
+using System.Threading.Tasks;
+
+namespace SuccessCase
+{
+    public class Program
+    {
+        public async static Task<Task> M()
+        {
+            var p = new Program();
+            return {|p.Example2().Result|DENA008|Must use await|};
+        }
+        
+        public async Task<Task> Example2()
+        {
+            return await new Task<Task>(null);
+        }
+    }
+
+}

@@ -1,0 +1,17 @@
+using Cysharp.Threading.Tasks;
+using System;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+
+namespace FailedCase
+{
+    public class UniTask1_generic
+    {
+        UniTask Task_NoAsync() => {|UniTask.Run(() => {})|DENA008|Must use await|};
+
+        public void UseAsync()
+        {
+            var hoge = (UniTask){|Task_NoAsync()|DENA008|Must use await|};
+        }
+    }
+}

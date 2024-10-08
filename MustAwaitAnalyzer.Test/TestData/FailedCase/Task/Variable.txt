@@ -1,0 +1,16 @@
+using System.Threading.Tasks;
+
+namespace FailedCase
+{
+    public class Variable
+    {
+        public async Task M2(bool b)
+        {
+            var task = {|Task.Run(() => {})|DENA008|Must use await|};
+            if (b)
+            {
+                await task;
+            }
+        }
+    }
+}

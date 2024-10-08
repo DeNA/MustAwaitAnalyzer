@@ -1,0 +1,16 @@
+using System;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+
+namespace FailedCase
+{
+    public class Task1
+    {
+        Func<Task<int>> Example() => (() => {|Task.Run(() => 0)|DENA008|Must use await|});
+
+        public void UseAsync()
+        {
+            Example();
+        }
+    }
+}

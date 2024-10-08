@@ -1,0 +1,18 @@
+using System;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+
+namespace FailedCase
+{
+    public class Foo
+    {
+        Action<object> action = (object obj) =>
+        {
+        };
+
+        public Task Hoge()
+        {
+            return {|new Task(action, "a")|DENA008|Must use await|};
+        }
+    }
+}

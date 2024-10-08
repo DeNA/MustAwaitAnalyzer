@@ -1,0 +1,16 @@
+using System;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+
+namespace FailedCase
+{
+    public class Task1
+    {
+        Task Task_NoAsync() => {|Task.Run(() => {})|DENA008|Must use await|};
+
+        public void UseAsync()
+        {
+            var hoge = (Task<int>){|Task_NoAsync()|DENA008|Must use await|};
+        }
+    }
+}

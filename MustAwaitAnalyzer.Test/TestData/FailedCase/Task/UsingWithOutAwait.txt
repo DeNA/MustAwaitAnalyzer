@@ -1,0 +1,21 @@
+﻿using System;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+
+namespace MustAwaitAnalyzer.Test.FailedCase
+{
+    public class UsingWithAwait
+    {
+        public async void M1()
+        {
+            using ({|M2()|DENA008|Must use await|})
+            {
+            }
+        }
+
+        public async Task<IDisposable> M2()
+        {
+            return await (Task<IDisposable>)Task.Run(() => {});
+        }
+    }
+}

@@ -1,0 +1,21 @@
+using System;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+
+namespace FailedCase
+{
+    public class C {
+        public async void M() 
+        {
+            if ({|M2()|DENA008|Must use await|})
+            {
+            }
+        }
+
+        public async Task<bool> M2()
+        {
+            return await (Task<bool>)Task.Run(() => true);
+        }
+    }
+}
+

@@ -1,0 +1,24 @@
+﻿using System;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+
+namespace MustAwaitAnalyzer.Test.FailedCase
+{
+    interface IStudent
+    {
+        Task GetName();
+    }
+
+    partial class PartialMethod : IStudent
+    {
+        public virtual partial Task GetName();
+    }
+
+    public partial class PartialMethod
+    {
+        public virtual partial async Task GetName()
+        {
+            {|Task.Run(() => {})|DENA008|Must use await|};
+        }
+    }
+}

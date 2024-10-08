@@ -1,0 +1,17 @@
+using System.Threading.Tasks;
+using System.Collections.Generic;
+
+namespace FailedCase
+{
+    public class TaskList2
+    {
+        public async Task M1()
+        {
+            var list = new List<Task>();
+            var task1 = {|Task.Run(() => {})|DENA008|Must use await|};
+            task1 = Task.Run(() => {});
+            list.Add(task1);
+            await Task.WhenAll(list);
+        }
+    }
+}

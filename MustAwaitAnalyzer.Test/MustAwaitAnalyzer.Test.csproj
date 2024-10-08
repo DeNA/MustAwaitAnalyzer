@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+<PropertyGroup>
+  <TargetFramework>net6.0</TargetFramework>
+  <ImplicitUsings>enable</ImplicitUsings>
+  <Nullable>enable</Nullable>
+
+  <IsPackable>false</IsPackable>
+  <IsTestProject>true</IsTestProject>
+</PropertyGroup>
+
+<PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+  <PlatformTarget>AnyCPU</PlatformTarget>
+</PropertyGroup>
+
+<PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+  <PlatformTarget>AnyCPU</PlatformTarget>
+</PropertyGroup>
+
+<ItemGroup>
+  <PackageReference Include="Dena.CodeAnalysis.Testing" Version="3.0.4" />
+  <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
+  <PackageReference Include="NUnit" Version="3.13.3" />
+  <PackageReference Include="NUnit3TestAdapter" Version="4.4.2" />
+  <PackageReference Include="NUnit.Analyzers" Version="3.6.1" />
+  <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Analyzer.Testing.NUnit" Version="1.1.0" />
+  <PackageReference Include="Microsoft.CodeAnalysis.CSharp.CodeFix.Testing.NUnit" Version="1.1.0" />
+  <PackageReference Include="Microsoft.CodeAnalysis.CSharp.CodeRefactoring.Testing.NUnit" Version="1.1.0" />
+  <PackageReference Include="coverlet.collector" Version="3.2.0" />
+  <PackageReference Include="UniTask" Version="2.3.3" />
+</ItemGroup>
+
+<ItemGroup>
+  <ProjectReference Include="..\MustAwaitAnalyzer\MustAwaitAnalyzer.csproj" />
+</ItemGroup>
+
+<ItemGroup>
+  <AssemblyAttribute Include="System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage" />
+</ItemGroup>
+  
+</Project>
+

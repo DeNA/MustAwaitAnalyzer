@@ -1,0 +1,17 @@
+using System;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+
+namespace MustAwaitAnalyzer.Test.FailedCase
+{
+    public class YieldReturn
+    {
+        public async IAsyncEnumerable<int> M1()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                yield return (Task<int>){|Task.Run(() => 0)|DENA008|Must use await|};
+            }
+        }
+    }
+}

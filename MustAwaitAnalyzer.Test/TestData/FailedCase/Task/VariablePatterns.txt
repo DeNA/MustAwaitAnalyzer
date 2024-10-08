@@ -1,0 +1,22 @@
+﻿using System.Threading.Tasks;
+using System.Collections.Generic;
+using System;
+using System.Linq;
+
+namespace FailedCase
+{
+    public class VariablePatterns
+    {
+        public async void M2()
+        {
+            var task1 = {|GetTask2(out var task2)|DENA008|Must use await|};
+            await task1;
+        }
+        
+        public Task GetTask2(out Task task)
+        {
+            task = Task.CompletedTask;
+            return Task.CompletedTask;
+        }
+    }
+}

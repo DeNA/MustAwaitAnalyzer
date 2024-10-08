@@ -1,0 +1,15 @@
+using System.Threading.Tasks;
+
+namespace FailedCase
+{
+    public class FieldReference
+    {
+        private Task<int> _task = (Task<int>)Task.CompletedTask;
+
+        public Task<int> M1()
+        {
+            var f = new FieldReference();
+            return {|f._task|DENA008|Must use await|};
+        }
+    }
+}
