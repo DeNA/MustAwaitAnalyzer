@@ -1,5 +1,7 @@
 # MustAwaitAnalyzer
 
+[![CI](https://github.com/DeNA/MustAwaitAnalyzer/actions/workflows/ci.yml/badge.svg?branch=master&event=push)](https://github.com/DeNA/MustAwaitAnalyzer/actions/workflows/ci.yml)
+
 ## Overview
 
 MustAwaitAnalyzer is a roslyn analyzer that enforces the use of `await` when calling methods that return:
