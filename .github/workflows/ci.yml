@@ -16,4 +16,4 @@ jobs:
         with:
           dotnet-version: '6.0.x'
       - name: dotnet test
-        run: dotnet test ./Dena.CodeAnalysis.Testing.sln
+        run: dotnet test ./MustAwaitAnalyzer.sln
