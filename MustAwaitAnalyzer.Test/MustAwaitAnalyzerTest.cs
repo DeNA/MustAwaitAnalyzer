@@ -3,7 +3,6 @@ using Cysharp.Threading.Tasks;
 using NUnit.Framework;
 using Dena.CodeAnalysis.CSharp.Testing;
 using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp;
 
 namespace MustAwaitAnalyzer.Test;
 
@@ -54,9 +53,8 @@ public class MustAwaitAnalyzerTest
     {
         var analyzer = new MustAwaitAnalyzer();
         var sourceWithEmbeddedMarkers = await File.ReadAllTextAsync(TestData.GetPath(fileName));
-        var (source, expected) = TestDataParser
+        var (source, _) = TestDataParser
             .CreateSourceAndExpectedDiagnostic(sourceWithEmbeddedMarkers);
-
 
         var diagnostics = await DiagnosticAnalyzerRunner.Run(
             analyzer,
@@ -92,7 +90,6 @@ public class MustAwaitAnalyzerTest
         var sourceWithEmbeddedMarkers = await File.ReadAllTextAsync(TestData.GetPath(fileName));
         var (source, expected) = TestDataParser
             .CreateSourceAndExpectedDiagnostic(sourceWithEmbeddedMarkers);
-
 
         var diagnostics = await DiagnosticAnalyzerRunner.Run(
             analyzer,
