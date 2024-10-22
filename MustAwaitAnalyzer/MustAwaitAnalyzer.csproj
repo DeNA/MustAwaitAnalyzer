@@ -38,14 +38,9 @@
         <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="3.9.0"/>
     </ItemGroup>
 
-    <ItemGroup>
-        <ProjectReference Include="..\DenaUnityAnalyzers.Extensions\DenaUnityAnalyzers.Extensions.csproj"/>
-    </ItemGroup>
-
     <Target Name="_AddAnalyzersToOutput">
         <ItemGroup>
             <TfmSpecificPackageFile Include="$(OutputPath)\MustAwaitAnalyzer.dll" PackagePath="analyzers/dotnet/cs" />
-            <TfmSpecificPackageFile Include="$(OutputPath)\DenaUnityAnalyzers.Extensions.dll" PackagePath="analyzers/dotnet/cs" />
         </ItemGroup>
     </Target>
 
