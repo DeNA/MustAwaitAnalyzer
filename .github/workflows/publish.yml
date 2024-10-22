@@ -39,10 +39,13 @@ jobs:
       - name: dotnet build
         run: dotnet build ./MustAwaitAnalyzer.sln --configuration Release --no-restore
 
-      - name: Setup for UPM package
+      - name: Push UPM package
         run: |
           cp ./MustAwaitAnalyzer/bin/Release/netstandard2.0/MustAwaitAnalyzer.dll ./com.dena.must-await-analyzer/Analyzers/
           cp ./README.md* ./com.dena.must-await-analyzer/
+          git commit -a -m "Bump up version"
+          git tag ${{ needs.check-bump-version.outputs.new-version }}
+          git push --tags
 
       - name: Create NuPkg
         run: dotnet pack ./MustAwaitAnalyzer --include-symbols --configuration Release -o ./nupkg
