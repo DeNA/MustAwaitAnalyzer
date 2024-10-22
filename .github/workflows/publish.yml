@@ -39,6 +39,11 @@ jobs:
       - name: dotnet build
         run: dotnet build ./MustAwaitAnalyzer.sln --configuration Release --no-restore
 
+      - name: Setup for UPM package
+        run: |
+          cp ./MustAwaitAnalyzer/bin/Release/netstandard2.0/MustAwaitAnalyzer.dll ./com.dena.must-await-analyzer/Analyzers/
+          cp ./README.md* ./com.dena.must-await-analyzer/
+
       - name: Create NuPkg
         run: dotnet pack ./MustAwaitAnalyzer --include-symbols --configuration Release -o ./nupkg
 
