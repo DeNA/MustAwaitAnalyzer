@@ -9,7 +9,10 @@ MustAwaitAnalyzerは
 
 を戻り値に持つメソッドの呼び出しの際にawaitをつけることを強制するアナライザーです。
 
-以下に、このアナライザーの診断項目を記します。
+## Unity プロジェクトでの使用方法
+
+Unity 2021.1.2f1 以上が必要です。
+`https://github.com/DeNA/MustAwaitAnalyzer.git?path=com.dena.must-await-analyzer` を Package Manager に追加してください。
 
 ## DENA008: Must use await
 

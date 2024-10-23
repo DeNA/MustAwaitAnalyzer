@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 using Microsoft.CodeAnalysis;
 
-namespace DenaUnityAnalyzers.Extensions
+namespace AnalyzerExtensions
 {
     public static class INamespaceOrTypeSymbolExtensions
     {

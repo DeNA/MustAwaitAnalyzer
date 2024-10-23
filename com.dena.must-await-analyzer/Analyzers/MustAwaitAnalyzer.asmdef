@@ -1,5 +1,5 @@
 {
-    "name": "DenaUnityAnalyzers",
+    "name": "MustAwaitAnalyzer",
     "rootNamespace": "",
     "references": [],
     "includePlatforms": [],
