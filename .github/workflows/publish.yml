@@ -45,7 +45,8 @@ jobs:
           cp ./README.md* ./com.dena.must-await-analyzer/
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git commit -a -m "Bump up version"
+          git add .
+          git commit -m "Bump up version"
           git tag ${{ needs.check-bump-version.outputs.new-version }}
           git push --tags
 
