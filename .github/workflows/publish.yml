@@ -5,7 +5,7 @@ on:
     branches:
     - master
     paths:
-      - 'package.json'
+      - 'com.dena.must-await-analyzer/package.json'
 
 jobs:
   check-bump-version:
@@ -18,7 +18,7 @@ jobs:
           fetch-depth: 200
       - name: Get version number diff
         run: |
-          version="$(git diff ${{ github.event.before }}..${{ github.event.after }} package.json | sed -nr '/^\+ +\"version\":/p' | sed -r 's/^.*\"([0-9a-z\.\-\+]+)\"*.$/\1/')"
+          version="$(git diff ${{ github.event.before }}..${{ github.event.after }} com.dena.must-await-analyzer/package.json | sed -nr '/^\+ +\"version\":/p' | sed -r 's/^.*\"([0-9a-z\.\-\+]+)\"*.$/\1/')"
           echo "version=$version" >> "$GITHUB_OUTPUT"
         id: diff
 
