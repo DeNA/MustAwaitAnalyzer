@@ -1,7 +1,7 @@
 {
   "name": "com.dena.must-await-analyzer",
   "displayName": "MustAwaitAnalyzer",
-  "version": "1.4.6",
+  "version": "1.0.0",
   "unity": "2021.1",
   "unityRelease": "2f1",
   "description": "MustAwaitAnalyzer is a roslyn analyzer that enforces the use of await\n",

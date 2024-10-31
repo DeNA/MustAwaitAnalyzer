@@ -18,7 +18,7 @@
         <Description>MustAwaitAnalyzers</Description>
         <Copyright>Copyright DeNA Co., Ltd. All rights reserved.</Copyright>
         <PackageTags>RoslynAnalyzers</PackageTags>
-        <Version>1.4.6</Version>
+        <Version>1.0.0</Version>
         <NoPackageAnalysis>true</NoPackageAnalysis>
 
         <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);_AddAnalyzersToOutput</TargetsForTfmSpecificContentInPackage>
