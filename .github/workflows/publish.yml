@@ -56,3 +56,30 @@ jobs:
 
       - name: Publish NuPkg
         run: dotnet nuget push ./nupkg/MustAwaitAnalyzer.*.symbols.nupkg -s https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_TOKEN }}
+
+  push:
+    needs: check-bump-version
+    if: ${{ needs.check-bump-version.outputs.new-version == false}}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - name: Setup .NET
+        uses: actions/setup-dotnet@main
+        with:
+          dotnet-version: '6.0.x'
+
+      - name: Install dependencies
+        run: dotnet restore ./MustAwaitAnalyzer.sln
+
+      - name: dotnet build
+        run: dotnet build ./MustAwaitAnalyzer.sln --configuration Release --no-restore
+
+      - name: Push dll
+        run: |
+          cp ./MustAwaitAnalyzer/bin/Release/netstandard2.0/MustAwaitAnalyzer.dll ./com.dena.must-await-analyzer/Analyzers/
+          cp ./README.md* ./com.dena.must-await-analyzer/
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "Upload dll"
+          git push origin master
