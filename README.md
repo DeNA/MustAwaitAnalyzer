@@ -12,7 +12,7 @@ MustAwaitAnalyzer is a roslyn analyzer that enforces the use of `await` when cal
 ## Install into Unity Project
 
 Requires Unity 2021.1.2f1 or later.
-You can add `https://github.com/DeNA/MustAwaitAnalyzer.git?path=com.dena.must-await-analyzer` to Package Manager.
+You can add `https://github.com/DeNA/MustAwaitAnalyzer.git?path=com.dena.must-await-analyzer#1.0.0` to Package Manager.
 
 ## Install into .NET Project
 
