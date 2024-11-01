@@ -12,7 +12,7 @@ MustAwaitAnalyzerは
 ## Unity プロジェクトでの使用方法
 
 Unity 2021.1.2f1 以上が必要です。
-`https://github.com/DeNA/MustAwaitAnalyzer.git?path=com.dena.must-await-analyzer` を Package Manager に追加してください。
+`https://github.com/DeNA/MustAwaitAnalyzer.git?path=com.dena.must-await-analyzer#1.0.0` を Package Manager に追加してください。
 
 ## .NET プロジェクトでの使用方法
 
